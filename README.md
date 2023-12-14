@@ -21,3 +21,9 @@ This repo was adapted from [this repository](https://github.com/Thinkful-Ed/star
 1. Check `/api/products` on the production server instance to confirm server is deployed, though since the production db wasn't seeded, you'll receive an empty response
 1. **Seed production db:** Run `NODE_ENV=production npm run knex -- seed:run` locally to seed the production db
 1. Check `/api/products` again on the production server instance; response should return a data payload this time
+
+## Notes / troubleshooting:
+
+- If /api/products returns 502 or some other error, you probably didn't run the migration for the production db
+- If the response is successful but empty, make sure you've seeded the production db
+- On Render, when setting PRODUCTION_DATABASE_URL environment variable, the value/URL string DOES NOT need to be wrapped in quote (e.g., just directly paste postgres://abcdefgh:\*\*\*@{domain}.db.elephantsql.com/abcdefgh without quotes)
