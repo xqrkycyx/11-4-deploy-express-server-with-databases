@@ -27,3 +27,11 @@ This repo was adapted from [this repository](https://github.com/Thinkful-Ed/star
 - If /api/products returns 502 or some other error, you probably didn't run the migration for the production db
 - If the response is successful but empty, make sure you've seeded the production db
 - On Render, when setting PRODUCTION_DATABASE_URL environment variable, the value/URL string DOES NOT need to be wrapped in quote (e.g., just directly paste postgres://abcdefgh:\*\*\*@{domain}.db.elephantsql.com/abcdefgh without quotes)
+
+## Live deploy links:
+
+https://simple-server-with-database.onrender.com/
+
+- [/api/products](https://simple-server-with-database.onrender.com/api/products)
+- [/api/products/1](https://simple-server-with-database.onrender.com/api/products/1)
+- [/api/ping](https://simple-server-with-database.onrender.com/api/ping)
