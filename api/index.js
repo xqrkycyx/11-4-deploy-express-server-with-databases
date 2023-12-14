@@ -7,8 +7,8 @@ console.log("Database_URL", process.env.PRODUCTION_DATABASE_URL);
 
 app.use(express.json());
 app.use("/api/ping", (_request, response, _next) => {
-  response.setHeader('Content-Type', 'application/json')
-  response.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
+  response.setHeader("Content-Type", "application/json");
+  response.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
   response.json({ data: "pong!" });
 });
 app.use("/api/products", productsRouter);
@@ -25,7 +25,7 @@ app.use((error, _request, response, _next) => {
   response.status(status).json({ errors: [message] });
 });
 
-const { PORT = 5000 } = process.env;
+const { PORT = 5001 } = process.env;
 const listener = () => console.log(`Listening on Port ${PORT}!`);
 app.listen(PORT, listener);
 
